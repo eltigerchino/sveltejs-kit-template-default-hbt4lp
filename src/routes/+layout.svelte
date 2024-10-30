@@ -1,6 +1,7 @@
 <script>
 	import Header from './Header.svelte';
 	import '../app.css';
+	import { page } from '$app/stores';
 
 	/** @type {{children: import('svelte').Snippet}} */
 	let { children } = $props();
@@ -10,14 +11,11 @@
 	<Header />
 
 	<main>
+
+		<p>{JSON.stringify($page.data)}</p>
+
 		{@render children()}
 	</main>
-
-	<footer>
-		<p>
-			visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
-		</p>
-	</footer>
 </div>
 
 <style>
